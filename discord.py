@@ -1,9 +1,11 @@
 import requests
 import random
 from time import sleep
+from essential_generators import DocumentGenerator
 channel_id='CHANNEL ID'
 token='YOUR ACCOUNT TOKEN'
-message=['who dey zuzu','whats up guys', 'spap nice one', 'comrades how far', 'happy sunday', 'whats poping']
+gen = DocumentGenerator()
+message=gen.sentence()
 
 
 def sendMessage(token, channel_id, message):
