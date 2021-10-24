@@ -41,8 +41,8 @@ def sendMessage1(token, channel_id1, message):
 
 while True:
     try:
-        sendMessage(token,channel_id,random.choice(message))
-        sendMessage1(token,channel_id1,random.choice(message))
+        sendMessage(token,channel_id,message)
+        sendMessage1(token,channel_id1,message)
     except Exception as e:
         sleep(360)
         print(e)
