@@ -45,7 +45,7 @@ def sendMessage(token, channel_id, message):
         print(e)
 
     
-    sleep(random.randint(200,650))
+    sleep(random.randint(200,680))
 
 
 
