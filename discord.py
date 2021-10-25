@@ -40,7 +40,7 @@ def sendMessage(token, channel_id, message):
         if r.status_code == 200:
             print(f'quote sent: {message} \n')
         else:
-            print(r.status_code)
+            print(r.raise_for_status())
     except Exception as e:
         print(e)
 
