@@ -1,8 +1,34 @@
 import requests
 import random
 from time import sleep
-channel_id='CHANNEL ID'
-token='YOUR ACCOUNT TOKEN'
+import discum
+from discum.gateway.session import guild
+channel_id='CHANNEL_ID'
+token='YOUR_TOKEN'
+
+bot = discum.Client(token=token)
+
+def close_after_fetching(resp, guild_id):
+    if bot.gateway.finishedMemberFetching(guild_id):
+        lenmembersfetched = len(bot.gateway.session.guild(guild_id).members)
+        print(str(lenmembersfetched) + ' members fetched')
+        bot.gateway.removeCommand({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
+        bot.gateway.close()
+
+def get_members(guild_id, channel_id):
+    bot.gateway.fetchMembers(guild_id, channel_id, keep='all', wait=1)
+    bot.gateway.command({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
+    bot.gateway.run()
+    bot.gateway.resetSession()
+    return bot.gateway.session.guild(guild_id).members
+
+members = get_members('872896252638019605', '888117942166892574')
+memberslist = []
+
+for memberID in members:
+    memberslist.append(memberID)
+    print(memberID)
+
 
 def sendMessage(token, channel_id, message):
     try:
@@ -19,8 +45,11 @@ def sendMessage(token, channel_id, message):
         print(e)
 
     
-    sleep(random.randint(360,800))
+    sleep(random.randint(360,650))
 
+
+
+LIST=[]
 
 while True:
     try:
@@ -30,8 +59,19 @@ while True:
             data = json_data['data']
             message=data[0]['quoteText']
         else:
+            print(requests.status_codes)
             message=['who dey zuzu','whats up guys', 'spap nice one', 'comrades how far', 'happy sunday', 'whats poping']
-        sendMessage(token,channel_id,message)
+
+        for line in memberslist:
+            for word in line.split():
+                LIST.append(word)
+        answer = random.choice(LIST)
+        answer=int(answer)
+        userid= f'<@!{answer}>'
+        taguser=userid+message
+
+        
+        sendMessage(token,channel_id,taguser)
     except Exception as e:
         sleep(360)
         print(e)
