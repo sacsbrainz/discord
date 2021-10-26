@@ -22,7 +22,7 @@ def get_members(guild_id, channel_id):
     bot.gateway.resetSession()
     return bot.gateway.session.guild(guild_id).members
 
-members = get_members('872896252638019605', '888117942166892574')
+members = get_members('THE_DISCORD_SERVER_ID', 'DISCORD_CHANNEL_ID')
 memberslist = []
 
 for memberID in members:
