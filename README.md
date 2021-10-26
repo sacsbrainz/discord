@@ -20,7 +20,7 @@ which will all need to be hardcoded into the script  before running it(token,cha
 
 **steps**
 
-**to install required dependencies manually :**
+**to install the required dependencies manually :**
 ```
 pip install requests
 pip install discum
