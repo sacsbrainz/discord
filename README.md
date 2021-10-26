@@ -42,3 +42,6 @@ chmod 777 ./bot.sh
 ```
 ./bot.sh
 ````
+
+Once your done you can host the script online using [streamlit](https://share.streamlit.io/)
+**Dont forget while forking this repo to host it online set the visibility as private**
