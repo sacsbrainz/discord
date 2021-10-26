@@ -16,7 +16,7 @@ and lastly you need to have the **channel_id** and **server_id** [read more](htt
 
 which will all need to be hardcoded into the script  before running it(token,channel_id,server_id) 
 
->**note only where you see the '' you will add the values inside it**
+>**note only where you see the ' ' you will add the values inside it**
 
 **steps**
 
