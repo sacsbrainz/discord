@@ -7,7 +7,7 @@ This script sends random quotes to an discord server an tags random users on the
 **MADE WITH LOVE BY SACS 💖💖💖**
 
 
-to run thIS script use the bash script or run manually
+to run this script use the bash script or run manually
 required dependencies are discum and requests
 
 you will need to get your discord auth **token** [read more](https://youtu.be/WWHZoa0SxCc)
