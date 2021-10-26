@@ -3,7 +3,7 @@ import random
 from time import sleep
 import discum
 from discum.gateway.session import guild
-channel_id='CHANNEL_ID'
+channel_id='DISCORD_CHANNEL_ID'
 token='YOUR_TOKEN'
 
 bot = discum.Client(token=token)
