@@ -4,7 +4,7 @@ discord script
 
 This script sends random quotes to an discord server and tags random users on the server in the process
 
-**MADE WITH LOVE BY SACS 💖💖💖**
+**MADE WITH LOVE BY SACS :heart:**
 
 
 to run this script use the bash script or run manually
@@ -16,7 +16,7 @@ and lastly you need to have the **channel_id** and **server_id** [read more](htt
 
 which will all need to be hardcoded into the script  before running it(token,channel_id,server_id) 
 
-**note only where you see the '' or "" you will add the values inside it**
+>**note only where you see the '' or "" you will add the values inside it**
 
 **steps**
 
@@ -45,4 +45,4 @@ chmod 777 ./bot.sh
 
 Once your done you can host the script online using [streamlit](https://share.streamlit.io/)
 
-**Dont forget while forking this repo to host it online set the visibility as private**
+>**Dont forget while forking this repo to host it online set the visibility as private**
