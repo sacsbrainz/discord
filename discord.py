@@ -72,7 +72,6 @@ while True:
 
         
         send_message(channel_id, taguser)
-        print(f'quote sent: {taguser} \n')
     except Exception as e:
         sleep(150)
         print(e)
