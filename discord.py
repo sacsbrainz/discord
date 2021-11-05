@@ -45,6 +45,7 @@ for memberID in members:
 
 def send_message(channel_id, message):
     bot.sendMessage(channel_id, message)
+    print(f'quote sent: {message} \n')
     sleep(random.randint(200,490))
 
 
