@@ -16,19 +16,26 @@ password='YOUR_DISCORD_PASSWORD'
 bot = discum.Client(email=email, password=password, log=False)
 
 def close_after_fetching(resp, guild_id):
-    if bot.gateway.finishedMemberFetching(guild_id):
-        lenmembersfetched = len(bot.gateway.session.guild(guild_id).members)
-        print(str(lenmembersfetched) + ' members fetched')
-        bot.gateway.removeCommand({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
-        bot.gateway.close()
+    try:
+
+        if bot.gateway.finishedMemberFetching(guild_id):
+            lenmembersfetched = len(bot.gateway.session.guild(guild_id).members)
+            print(str(lenmembersfetched) + ' members fetched')
+            bot.gateway.removeCommand({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
+            bot.gateway.close()
+    except Exception as e:
+        print(e)
 
 def get_members(guild_id, channel_id):
-    bot.gateway.fetchMembers(guild_id, channel_id, keep='all', wait=1)
-    bot.gateway.command({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
-    bot.gateway.run()
-    bot.gateway.resetSession()
-    return bot.gateway.session.guild(guild_id).members
-
+    try:
+        bot.gateway.fetchMembers(guild_id, channel_id, keep='all', wait=1)
+        bot.gateway.command({'function': close_after_fetching, 'params': {'guild_id': guild_id}})
+        bot.gateway.run()
+        bot.gateway.resetSession()
+        return bot.gateway.session.guild(guild_id).members
+    except Exception as e:
+        print (e)
+        
 print('fetching member list please wait....')
 members = get_members('THE_DISCORD_SERVER_ID', 'DISCORD_CHANNEL_ID')
 memberslist = []
