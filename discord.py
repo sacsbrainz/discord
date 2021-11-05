@@ -54,7 +54,7 @@ LIST=[]
 
 while True:
     try:
-        response = requests.get("https://api.quotable.io/random?tags=technology|trading|trade|cryptocurrency|crypto|money|business")
+        response = requests.get("https://api.quotable.io/random")
         if response.status_code == 200:
             json_data = response.json()
             message = json_data['content']
