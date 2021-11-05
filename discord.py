@@ -13,7 +13,7 @@ password='YOUR_DISCORD_PASSWORD'
 # bot = discum.Client(token=token, log=False)
 
 #to log in using your email and password
-bot = discum.Client(email=email, password=password)
+bot = discum.Client(email=email, password=password, log=False)
 
 def close_after_fetching(resp, guild_id):
     if bot.gateway.finishedMemberFetching(guild_id):
@@ -64,6 +64,7 @@ while True:
 
         
         send_message(channel_id, taguser)
+        print(f'quote sent: {taguser} \n')
     except Exception as e:
         sleep(150)
         print(e)
