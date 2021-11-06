@@ -1,7 +1,11 @@
-import requests
-import random
+import sys, subprocess
 from time import sleep
-import discum
+try:
+    import requests, random, discum
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'requests'])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'discum'])
+
 from discum.gateway.session import guild
 channel_id='DISCORD_CHANNEL_ID'
 # token='YOUR_TOKEN'
