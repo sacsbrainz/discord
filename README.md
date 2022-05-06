@@ -6,6 +6,20 @@ This script sends random quotes to an discord server and tags random users on th
 
 **MADE WITH LOVE BY SACS :heart:**
 
+**To run this script on mobile you can use**
+
+**ANDROID**
+
+```
+1) Termux
+Or
+2) Pydroid3
+```
+**IOS(IPhone)**
+
+```
+https://ish.app
+```
 
 to run this script use the bash script or run manually
 required dependencies are discum and requests
